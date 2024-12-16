@@ -42,7 +42,7 @@ const observer = new MutationObserver(() => {
               }
             
             // 将新的数据添加到现有的 feedCardData 数组中
-            existingData = existingData.concat(savedData);
+            existingData = [...savedData, ...existingData];
             
             // 将更新后的数据存储回 chrome.storage.local
             chrome.storage.local.set({ feedCardData: existingData }, () => {
