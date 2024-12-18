@@ -38,7 +38,7 @@ const observer = new MutationObserver(() => {
             let existingData = result.feedCardData || []; // 如果没有数据，则使用空数组
             if (existingData.length > 100) {
                 // 删除前 10 条数据
-                existingData.splice(0, 10);
+                existingData.splice(-10);
               }
             
             // 将新的数据添加到现有的 feedCardData 数组中
